@@ -1,0 +1,274 @@
+{
+  "personalInfo": {
+    "fullName": "Antara Palwankar",
+    "email": "2025.antaray@isu.ac.in",
+    "phone": "+91 7741911000",
+    "location": "MN Society, New Panvel, Maharashtra, India",
+    "linkedin": "https://linkedin.com/in/antara-palwankar",
+    "github": "https://github.com/antara-palwankar",
+    "portfolioUrl": "https://antarapalwankar.dev",
+    "tagline": "Frontend & Web Development Intern"
+  },
+  "summary": "Motivated B.Tech Computer Science Engineering student specializing in responsive frontend web development, semantic HTML5, CSS3, and modern JavaScript. Proven experience building accessible web components, mobile-first layouts, and interactive UI controls through academic projects and collaborative hackathons. Eager to contribute clean code, rapid adaptability, and creative design problem-solving to the Frontend Engineering team at PixelCraft Technologies.",
+  "skills": [
+    {
+      "name": "HTML5 & Semantic Markup",
+      "category": "Frontend",
+      "proficiency": "Advanced",
+      "yearsOfExperience": 2,
+      "highlight": true,
+      "_id": "6ae21b6a2fc3bc1c7931bd87"
+    },
+    {
+      "name": "CSS3 & Responsive Design",
+      "category": "Frontend",
+      "proficiency": "Advanced",
+      "yearsOfExperience": 2,
+      "highlight": true,
+      "_id": "6ae21b6a2fc3bc1c7931bd88"
+    },
+    {
+      "name": "JavaScript (ES6+)",
+      "category": "Frontend",
+      "proficiency": "Intermediate",
+      "yearsOfExperience": 2,
+      "highlight": true,
+      "_id": "6ae21b6a2fc3bc1c7931bd89"
+    },
+    {
+      "name": "Web Development Fundamentals",
+      "category": "Frontend",
+      "proficiency": "Advanced",
+      "yearsOfExperience": 2,
+      "highlight": true,
+      "_id": "6ae21b6a2fc3bc1c7931bd8a"
+    },
+    {
+      "name": "React.js Basics",
+      "category": "Frontend",
+      "proficiency": "Beginner",
+      "yearsOfExperience": 1,
+      "highlight": false,
+      "_id": "6ae21b6a2fc3bc1c7931bd8b"
+    },
+    {
+      "name": "Problem Solving",
+      "category": "Soft Skills",
+      "proficiency": "Advanced",
+      "yearsOfExperience": 2,
+      "highlight": true,
+      "_id": "6ae21b6a2fc3bc1c7931bd8f"
+    },
+    {
+      "name": "Git & GitHub Version Control",
+      "category": "Tools & Platforms",
+      "proficiency": "Intermediate",
+      "yearsOfExperience": 2,
+      "highlight": true,
+      "_id": "6ae21b6a2fc3bc1c7931bd90"
+    },
+    {
+      "name": "Effective Teamwork & Communication",
+      "category": "Soft Skills",
+      "proficiency": "Expert",
+      "yearsOfExperience": 2,
+      "highlight": false,
+      "_id": "6ae21b6a2fc3bc1c7931bd93"
+    }
+  ],
+  "experience": [
+    {
+      "company": "ITM Skills University - Academic Projects & Cohort",
+      "role": "Undergraduate Computer Science Apprentice",
+      "location": "Navi Mumbai, India",
+      "type": "Full-time",
+      "startDate": "2025-08",
+      "endDate": "Present",
+      "isCurrent": true,
+      "bulletPoints": [
+        "Developing structured, modular web applications and user interfaces using HTML5, CSS3, and modern JavaScript.",
+        "Collaborating in agile student study pods on Data Structures in C++ and Python automation exercises.",
+        "Contributing to peer code reviews and participating in hands-on college hackathons focused on tech-for-good solutions."
+      ],
+      "technologies": [
+        "HTML5",
+        "CSS3",
+        "JavaScript",
+        "C++",
+        "Python",
+        "Git",
+        "GitHub"
+      ],
+      "_id": "6ae21b6a2fc3bc1c7931bd94"
+    },
+    {
+      "company": "Student Hackathon & Tech Guild",
+      "role": "Team Developer & Ideation Lead",
+      "location": "Maharashtra, India",
+      "type": "Internship",
+      "startDate": "2025-01",
+      "endDate": "2025-05",
+      "isCurrent": false,
+      "bulletPoints": [
+        "Participated in intensive coding hackathons, leading brainstorms and designing clean UI component mockups.",
+        "Collaborated with peers to implement responsive web layouts and integrate interactive JavaScript controls.",
+        "Presented solution prototypes to technical mentors, emphasizing clean structure and user-friendly experience."
+      ],
+      "technologies": [
+        "JavaScript",
+        "HTML5",
+        "CSS3",
+        "Problem Solving",
+        "Teamwork"
+      ],
+      "_id": "6ae21b6a2fc3bc1c7931bd95"
+    }
+  ],
+  "projects": [
+    {
+      "title": "Responsive Web Development Showcase",
+      "role": "Frontend Developer",
+      "category": "Frontend Web Development",
+      "summary": "Collection of responsive, accessible web pages built using HTML5, CSS3, and JavaScript as part of academic learning.",
+      "bulletPoints": [
+        "Practiced creating structured semantic layouts, modern hero sections, navigation bars, and interactive UI components.",
+        "Implemented flexible CSS media queries and flexbox layouts to ensure pixel-perfect rendering across mobile and desktop devices.",
+        "Focused on optimizing web page usability, loading performance, and intuitive user workflows."
+      ],
+      "technologies": [
+        "HTML5",
+        "CSS3",
+        "JavaScript",
+        "Responsive Design"
+      ],
+      "metrics": "100% mobile-responsive layout across all device viewports",
+      "githubUrl": "https://github.com/antara-palwankar/web-dev-practice",
+      "liveUrl": "https://antara-palwankar.github.io/web-dev-practice",
+      "featured": true,
+      "_id": "6ae21b6a2fc3bc1c7931bd96"
+    },
+    {
+      "title": "Collaborative Hackathon Solution",
+      "role": "Frontend & Team Collaborator",
+      "category": "Collaborative Engineering",
+      "summary": "Technology-based prototype developed during hackathon activities addressing campus productivity challenges.",
+      "bulletPoints": [
+        "Partnered with multidisciplinary teammates under tight deadlines to ideate and execute a functioning web demo.",
+        "Authored frontend presentation slides, documentation, and user navigation flows.",
+        "Conducted testing to ensure zero layout glitches on presentation devices."
+      ],
+      "technologies": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "Teamwork",
+        "Agile Presentation"
+      ],
+      "metrics": "Shortlisted among top participating freshman cohort teams",
+      "githubUrl": "https://github.com/antara-palwankar/hackathon-campus-solution",
+      "liveUrl": "",
+      "featured": false,
+      "_id": "6ae21b6a2fc3bc1c7931bd99"
+    }
+  ],
+  "certifications": [
+    {
+      "name": "Responsive Web Design Certification",
+      "issuer": "freeCodeCamp / Academic Learning",
+      "issueDate": "2025-02",
+      "expiryDate": "No Expiry",
+      "credentialId": "FCC-RWD-2025-ANTARA",
+      "credentialUrl": "https://freecodecamp.org/certification/antara-palwankar",
+      "_id": "6ae21b6a2fc3bc1c7931bd9a"
+    },
+    {
+      "name": "Programming in C++ Fundamentals",
+      "issuer": "ITM Skills University Coursework",
+      "issueDate": "2025-01",
+      "expiryDate": "No Expiry",
+      "credentialId": "ITM-CPP-2025",
+      "credentialUrl": "https://isu.ac.in/verify",
+      "_id": "6ae21b6a2fc3bc1c7931bd9b"
+    }
+  ],
+  "education": [
+    {
+      "institution": "ITM Skills University",
+      "degree": "Bachelor of Technology (B.Tech)",
+      "field": "Computer Science and Engineering",
+      "location": "Navi Mumbai, Maharashtra",
+      "startDate": "2025",
+      "endDate": "2029",
+      "grade": "First Class",
+      "coursework": [
+        "Programming in C++",
+        "Web Development Fundamentals",
+        "Data Structures & Algorithms",
+        "Engineering Mathematics",
+        "Digital Logic & Computer Design"
+      ],
+      "_id": "6ae21b6a2fc3bc1c7931bd9d"
+    },
+    {
+      "institution": "Maharashtra State Board (HSC)",
+      "degree": "Higher Secondary Certificate (HSC)",
+      "field": "Science Stream (PCM)",
+      "location": "New Panvel, Maharashtra",
+      "startDate": "2024",
+      "endDate": "2025",
+      "grade": "81% Score",
+      "coursework": [
+        "Physics",
+        "Chemistry",
+        "Mathematics",
+        "Computer Science Foundations",
+        "English"
+      ],
+      "_id": "6ae21b6a2fc3bc1c7931bd9e"
+    }
+  ],
+  "achievements": [
+    {
+      "title": "Active Hackathon Participant & Peer Contributor",
+      "issuer": "ITM Skills University Tech Fest 2025",
+      "date": "2025-03",
+      "description": "Participated in technical coding activities that involved teamwork, structured problem solving, and building working software prototypes with peers.",
+      "_id": "6ae21b6a2fc3bc1c7931bd9f"
+    },
+    {
+      "title": "HSC Distinction with 81% Board Score",
+      "issuer": "Maharashtra State Board",
+      "date": "2025-05",
+      "description": "Achieved an 81% score in the Higher Secondary Certificate examination with strong academic performance in Science and Mathematics.",
+      "_id": "6ae21b6a2fc3bc1c7931bda0"
+    }
+  ],
+  "publications": [
+    {
+      "title": "Interactive Learning Approaches in Early CS Web Development Curricula",
+      "publisher": "Academic Cohort Journal / Student Research Symposium",
+      "date": "2025-09",
+      "link": "https://isu.ac.in/research/antara-palwankar",
+      "authors": [
+        "Antara Palwankar",
+        "Cohort Mentors"
+      ],
+      "summary": "Exploration of modular, project-based web development exercises to accelerate programming comprehension for B.Tech CSE undergraduates.",
+      "_id": "6ae21b6a2fc3bc1c7931bda1"
+    }
+  ],
+  "languages": [
+    {
+      "language": "English",
+      "proficiency": "Fluent",
+      "_id": "6ae21b6a2fc3bc1c7931bda2"
+    },
+    {
+      "language": "Hindi",
+      "proficiency": "Native",
+      "_id": "6ae21b6a2fc3bc1c7931bda3"
+    }
+  ],
+  "template": "modern-tech",
+  "generatedAt": "2026-10-28T15:58:32.378Z"
+}
