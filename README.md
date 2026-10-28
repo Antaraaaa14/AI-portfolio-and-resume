@@ -1,24 +1,36 @@
 # NexusPortfolio AI — Centralized Portfolio Database & Gemini Dynamic Resume Generator
 
-[![React](https://img.shields.io/badge/Frontend-React%2019%20%2B%20Vite-blue.svg)](https://react.dev/)
-[![Node.js](https://img.shields.io/badge/Backend-Node.js%20%2B%20Express-green.svg)](https://expressjs.com/)
-[![Database](https://img.shields.io/badge/Database-MongoDB%20Mongoose-brightgreen.svg)](https://www.mongodb.com/)
-[![AI Engine](https://img.shields.io/badge/AI-Google%20Gemini%20API-orange.svg)](https://ai.google.dev/)
-[![Google Sheets](https://img.shields.io/badge/Integration-Google%20Sheets%20%2B%20Apps%20Script-yellow.svg)](https://developers.google.com/apps-script)
-[![Anti-Hallucination](https://img.shields.io/badge/Guardrail-100%25%20Grounded%20Verified-emerald.svg)]()
+[![React 19](https://img.shields.io/badge/Frontend-React%2019%20%2B%20Vite-61DAFB?logo=react&logoColor=black)](https://react.dev/)
+[![Node.js](https://img.shields.io/badge/Backend-Node.js%20%2B%20Express-339933?logo=node.js&logoColor=white)](https://expressjs.com/)
+[![Database](https://img.shields.io/badge/Database-MongoDB%20Mongoose-47A248?logo=mongodb&logoColor=white)](https://www.mongodb.com/)
+[![AI Engine](https://img.shields.io/badge/AI-Google%20Gemini%20API-4285F4?logo=google&logoColor=white)](https://ai.google.dev/)
+[![Google Sheets](https://img.shields.io/badge/Integration-Google%20Sheets%20%2B%20Apps%20Script-34A853?logo=googlesheets&logoColor=white)](https://developers.google.com/apps-script)
+[![Anti-Hallucination Guardrail](https://img.shields.io/badge/Guardrail-100%25%20Verified%20Grounded-emerald?logo=shield&logoColor=white)]()
 
-NexusPortfolio AI is an enterprise-grade, AI-powered portfolio management system that maintains all professional records in a centralized, relational database, integrates with the **Google Gemini API** for intelligent job description matching, synchronizes seamlessly with **Google Sheets**, and generates verified, downloadable, job-specific resumes in both **PDF** and **DOCX** formats.
+> **Enterprise-grade, AI-powered portfolio management and dynamic resume customization system.**  
+> Maintains all career records in a centralized **MongoDB** database, synchronizes bi-directionally with **Google Sheets**, and leverages the **Google Gemini API** to analyze any target Job Description (JD), calculate ATS match overlap, tailor career summaries, and generate downloadable, vector-sharp **PDF** and editable **DOCX** resumes with strict **Anti-Hallucination verification**.
 
 ---
 
-## 🌟 Key Highlights & Problem Statement Addressed
+## 🎥 End-to-End Demonstration Video Walkthrough
 
-Traditional resume tools require manual copy-pasting for each job application, causing fragmented profiles and risky inaccuracies. **NexusPortfolio AI** solves this by:
-1. **Single Source of Truth**: Storing all personal details, skills, certifications, projects, work experience, education, achievements, and publications in a structured **MongoDB** schema.
-2. **Intelligent Gemini API Processing**: Analyzing any pasted Job Description (JD) to extract required competencies, match candidate overlap (0–100%), identify missing skills, and suggest tailored improvements.
-3. **Strict Anti-Hallucination Guardrail**: Automatically validating every generated resume against the original portfolio records to guarantee zero invented qualifications, companies, or degrees.
-4. **Google Sheets Bi-Directional Synchronization**: Exporting the database into 8 cleanly formatted relational tabs via Google Apps Script webhooks and downloadable multi-tab Excel (`.xlsx`) workbooks.
-5. **Real-Time Dynamic Customization**: Interactive selection matrix with AI recommendation badges, real-time live preview across 3 ATS-optimized templates, and one-click PDF and DOCX downloads.
+The demonstration video below showcases the live application workflow: exploring the centralized portfolio database, parsing JDs with the Gemini API, calculating ATS keyword overlap, customizing parameters with real-time preview, switching ATS templates, and synchronizing with Google Sheets.
+
+![NexusPortfolio AI Live Demonstration Video](deliverables/demonstration_walkthrough.webp)
+
+> *File path in repository: [`deliverables/demonstration_walkthrough.webp`](deliverables/demonstration_walkthrough.webp) (High-Definition 1901x1092 animated walkthrough, 347 frames).*
+
+---
+
+## 🌟 Key Highlights & Core Problem Solved
+
+Traditional job application workflows require manual copy-pasting across disparate documents, resulting in fragmented profiles, formatting errors, and inaccurate claims. **NexusPortfolio AI** solves this by providing:
+
+1. **Single Source of Truth**: Centralized, relational **MongoDB** database storing 10 structured categories (Personal Info, Summary, Skills, Experience, Projects, Certifications, Education, Achievements, Publications, Languages).
+2. **Intelligent Gemini API Processing**: Analyzes any target Job Description to extract required technical/soft competencies, compute ATS match scores (0–100%), and suggest tailored improvements.
+3. **Strict Anti-Hallucination Guardrail**: Cross-references 100% of generated resume claims against the database to guarantee zero fabricated qualifications, companies, or metrics.
+4. **Google Sheets Bi-Directional Synchronization**: Exports database records into 8 formatted relational tabs via Google Apps Script webhooks and instant downloadable multi-tab Excel (`.xlsx`) workbooks.
+5. **Real-Time Dynamic Customization**: Interactive matrix with AI recommendation badges (`★ Recommended for this JD`), real-time live preview across 3 ATS templates, and one-click PDF and DOCX downloads.
 
 ---
 
@@ -26,20 +38,81 @@ Traditional resume tools require manual copy-pasting for each job application, c
 
 ```mermaid
 graph TD
-    A[User / Browser React Client] -->|REST API Requests| B[Node.js / Express Backend Server :5001]
-    B -->|Mongoose Schema Queries| C[(MongoDB Database :27017)]
-    B -->|AI JD Analysis & Summarization| D[Google Gemini 1.5 / 2.0 Flash API]
-    B -->|Two-Way Relational Sync| E[Google Apps Script Webhook]
-    E -->|Updates 8 Relational Tabs| F[Google Sheets Spreadsheet]
-    B -->|Vector ATS PDF Generation| G[PDFKit Engine]
-    B -->|Editable Word Doc Generation| H[DOCX Engine]
-    G --> A
-    H --> A
+    User([User / Browser]) <--> ReactClient[React 19 + Vite Frontend :5173]
+    ReactClient <--> ExpressServer[Node.js + Express Backend Server :5001]
+    
+    subgraph Data Storage & Sync
+        ExpressServer <--> MongoDB[(MongoDB Database :27017)]
+        ExpressServer <--> AppsScript[Google Apps Script Webhook]
+        AppsScript <--> GSheets[Google Sheets 8 Relational Tabs]
+        ExpressServer --> XLSXBuilder[Standalone Excel .xlsx Generator]
+    end
+
+    subgraph Intelligence & Verification
+        ExpressServer <--> GeminiAPI[Google Gemini 1.5 / 2.0 Flash API]
+        ExpressServer --> AntiHallucination[Anti-Hallucination Verification Guardrail]
+        AntiHallucination <--> MongoDB
+    end
+
+    subgraph Document Renderers
+        ExpressServer --> PDFKit[Vector ATS PDFKit Engine]
+        ExpressServer --> DOCXGen[Microsoft Word DOCX Engine]
+    end
+
+    PDFKit --> ReactClient
+    DOCXGen --> ReactClient
+    XLSXBuilder --> ReactClient
 ```
 
 ---
 
-## 📂 Project Structure
+## 📸 Visual Gallery & Application Modules
+
+### 1. Executive Dashboard & Metrics Overview
+Displays candidate profile information, total verified skills count, active projects, certifications, and quick navigation cards.
+![Dashboard Overview](deliverables/screenshots/dashboard_page_1793203143368.png)
+
+### 2. Centralized Portfolio Database (10 Categories)
+Full CRUD manager allowing adding, updating, and removing items across Personal Info, Summary, Skills, Experience, Projects, Education, etc.
+![Portfolio Database](deliverables/screenshots/portfolio_database_page_1793203170265.png)
+
+### 3. AI Job Description Analysis & ATS Scoring
+Pastes any JD to extract required competencies, detect missing keywords, calculate ATS match score, and generate tailored summaries with Google Gemini.
+![AI Resume Generator](deliverables/screenshots/ai_resume_generator_page_1793203236644.png)
+![Gemini AI Analysis Results](deliverables/screenshots/ai_analysis_results_1793203303985.png)
+
+### 4. Dynamic Parameter Customization & Live Template Switching
+Interactive matrix with `★ Recommended` badges and real-time live preview across 3 ATS templates: **Modern Tech**, **Classic Executive**, and **Minimalist ATS**.
+![Classic Executive Template](deliverables/screenshots/classic_executive_template_1793203363442.png)
+![Template Changed View](deliverables/screenshots/template_changed_1793203409298.png)
+
+### 5. Google Sheets Two-Way Synchronization Center
+Automated webhook integration pushing all 8 relational categories directly into Google Sheets with auto-formatting and instant `.xlsx` export.
+![Google Sheets Sync Center](deliverables/screenshots/google_sheets_sync_tab_1793203431981.png)
+
+---
+
+## 🎯 Case Study: Dual Resume Generation from One Portfolio
+
+As required by the assignment guidelines, the system was evaluated against **two distinct Job Descriptions** generated from **Antara Palwankar's** portfolio:
+
+| Parameter | Resume 1: Frontend Web Dev Intern | Resume 2: Junior Software Engineer (C++ & Python) |
+| :--- | :--- | :--- |
+| **Target Role** | Frontend & Web Development Intern | Junior Software Engineer Trainee |
+| **Target Company** | PixelCraft Technologies | NexGen Systems & Solutions |
+| **Gemini ATS Match Score** | **94% ATS Match** | **91% ATS Match** |
+| **Selected Template** | Modern Tech (Sapphire & Slate) | Classic Executive (Formal Serif) |
+| **Primary Focus** | Responsive design, HTML5/CSS3, JavaScript DOM manipulation, mobile layouts, UI usability. | Algorithmic problem solving, C++ syntax, Python basics, loops, arrays, computational game logic. |
+| **Highlighted Projects** | 1. *Responsive Web Development Showcase*<br>2. *Collaborative Hackathon Solution* | 1. *Algorithmic Problem Solving (C++ & Python)*<br>2. *Interactive Scratch Game & Logic Simulator* |
+| **Highlighted Certifications**| Responsive Web Design Certification | Programming in C++ Fundamentals, Python Foundations |
+| **Anti-Hallucination Status**| **100% Verified Grounded** (0 invented claims) | **100% Verified Grounded** (0 invented claims) |
+| **Generated Formats** | [Download PDF](deliverables/Antara_Palwankar_Frontend_Web_Dev_Intern_Resume.pdf) \| [Download DOCX](deliverables/Antara_Palwankar_Frontend_Web_Dev_Intern_Resume.docx) | [Download PDF](deliverables/Antara_Palwankar_Junior_Software_Engineer_Resume.pdf) \| [Download DOCX](deliverables/Antara_Palwankar_Junior_Software_Engineer_Resume.docx) |
+
+> 📄 For the complete comparative breakdown, view [`deliverables/resume_customization_comparison.md`](deliverables/resume_customization_comparison.md).
+
+---
+
+## 📂 Project Repository Structure
 
 ```bash
 ai-portfolio-resume-system/
@@ -60,7 +133,7 @@ ai-portfolio-resume-system/
 │   │   └── sampleJDs.js          # Two sample job descriptions (Frontend Intern & Junior SWE)
 │   ├── scripts/
 │   │   └── generateDeliverables.js# Automated generator for test resumes & comparison
-│   ├── .env                      # Port, MongoDB URI & Gemini API key config
+│   ├── .env.example              # Environment variables template
 │   └── server.js                 # Express server bootstrap & MongoDB connection
 ├── frontend/
 │   ├── src/
@@ -79,15 +152,22 @@ ai-portfolio-resume-system/
 │   └── package.json
 ├── apps-script/
 │   └── Code.gs                   # Ready-to-deploy Google Apps Script Web App
+├── docs/
+│   ├── SYSTEM_DOCUMENTATION.md   # Complete technical specifications & schemas
+│   ├── API_REFERENCE.md          # REST API endpoints & payload specifications
+│   └── GOOGLE_SHEETS_SETUP.md    # Step-by-step Apps Script deployment tutorial
 ├── deliverables/
+│   ├── demonstration_walkthrough.webp # Full animated video demo (7.5 MB, 347 frames)
 │   ├── Antara_Palwankar_Frontend_Web_Dev_Intern_Resume.pdf
 │   ├── Antara_Palwankar_Frontend_Web_Dev_Intern_Resume.docx
 │   ├── Antara_Palwankar_Junior_Software_Engineer_Resume.pdf
 │   ├── Antara_Palwankar_Junior_Software_Engineer_Resume.docx
 │   ├── Portfolio_Database_Antara_Palwankar.xlsx
 │   ├── resume_customization_comparison.md
-│   ├── demonstration_walkthrough.webp
-│   └── screenshots/
+│   ├── resume_1_frontend_intern.json
+│   ├── resume_2_software_engineer_trainee.json
+│   └── screenshots/              # 10 High-definition screenshots
+├── .gitignore                    # Git ignore file (node_modules, .env, .DS_Store)
 └── README.md
 ```
 
@@ -96,25 +176,38 @@ ai-portfolio-resume-system/
 ## 🚀 Step-by-Step Installation & Setup
 
 ### Prerequisites
-- **Node.js**: v18 or higher (v24.14+ tested)
-- **MongoDB**: Local `mongod` running on `mongodb://127.0.0.1:27017` or MongoDB Atlas URI.
+- **Node.js**: v18.0.0 or higher (v24.14+ tested)
+- **MongoDB**: Local MongoDB instance (`mongod`) running on `mongodb://127.0.0.1:27017` or MongoDB Atlas URI
 - **npm** or **yarn**
 
-### 1. Clone or Open Project Directory
+### 1. Clone the Repository
 ```bash
-cd /Users/antarapalwankar/.gemini/antigravity-ide/scratch/ai-portfolio-resume-system
+git clone https://github.com/Antaraaaa14/AI-portfolio-and-resume.git
+cd AI-portfolio-and-resume
 ```
 
-### 2. Start Backend Server
+### 2. Configure Environment Variables
+Copy the template in the backend:
+```bash
+cp backend/.env.example backend/.env
+```
+Edit `backend/.env` (optional, can also be configured from the web UI Settings modal):
+```env
+PORT=5001
+MONGODB_URI=mongodb://127.0.0.1:27017/portfolio_db
+GEMINI_API_KEY=your_gemini_api_key_here
+```
+
+### 3. Start the Backend API Server
 ```bash
 cd backend
 npm install
 node server.js
 ```
-*The backend will automatically connect to MongoDB, verify the schema, and auto-seed Antara Palwankar's comprehensive portfolio if empty.*
+*The backend will automatically connect to MongoDB, verify the schema, and auto-seed Antara Palwankar's comprehensive portfolio if empty.*  
 Server runs at: `http://localhost:5001`
 
-### 3. Start Frontend Development Server
+### 4. Start the Frontend Development Server
 In a new terminal window:
 ```bash
 cd frontend
@@ -128,8 +221,8 @@ Open `http://localhost:5173` in your browser.
 ## 🔑 Gemini API Configuration & Resilience
 
 1. Click on **Settings** in the top navigation bar.
-2. Enter your Gemini API Key (or define `GEMINI_API_KEY=your_key` in `backend/.env`).
-3. Select your model:
+2. Enter your Gemini API Key (or set `GEMINI_API_KEY` in `backend/.env`).
+3. Select your preferred model:
    - `gemini-1.5-flash` (Recommended: fast, high throughput)
    - `gemini-2.0-flash`
    - `gemini-1.5-pro`
@@ -150,75 +243,21 @@ The system exports portfolio records into 8 separate relational worksheets:
 - `Achievements` (Awards, issuers, dates, descriptions)
 - `Publications` (Research papers, authors, venues, links)
 
-### Deploying the Google Apps Script:
-1. Open Google Sheets and create a blank sheet.
-2. Go to **Extensions > Apps Script**.
-3. Paste the contents of `apps-script/Code.gs` into the editor.
-4. Click **Deploy > New deployment**, select **Web app**, set **Execute as: Me** and **Who has access: Anyone**.
-5. Copy the generated Web App URL (`https://script.google.com/macros/s/.../exec`).
-6. Paste the URL into **Google Sheets Sync Center** in the web app and click **Sync to Google Sheets Webhook**!
-7. *Alternatively, click **Download Excel / Sheet (.xlsx)** to download the structured workbook immediately!*
+👉 For complete step-by-step instructions on deploying the Apps Script Web App, refer to [`docs/GOOGLE_SHEETS_SETUP.md`](docs/GOOGLE_SHEETS_SETUP.md).
 
 ---
 
-## 🎯 Dual Job Description Testing & Generated Resumes
+## 📚 Complete Documentation Links
 
-As required by the assignment guidelines, the system was tested with **two distinct Job Descriptions** generated from the same candidate portfolio:
-
-### Test Case 1: Frontend & Web Development Intern
-- **Target Role**: Frontend Web Development Intern
-- **Target Employer**: PixelCraft Technologies
-- **Gemini Match Score**: **94% ATS Match**
-- **ATS Template**: Modern Tech (Sapphire & Slate)
-- **Highlighted Focus**: Responsive web layout design, HTML5, CSS3, JavaScript DOM interaction, media queries, flexbox, usability optimization.
-- **Primary Projects**: *Responsive Web Development Showcase*, *Collaborative Hackathon Solution*.
-- **Generated Files**:
-  - `deliverables/Antara_Palwankar_Frontend_Web_Dev_Intern_Resume.pdf`
-  - `deliverables/Antara_Palwankar_Frontend_Web_Dev_Intern_Resume.docx`
-
-### Test Case 2: Junior Software Engineer / C++ & Python Trainee
-- **Target Role**: Junior Software Engineer (C++ & Python)
-- **Target Employer**: NexGen Systems & Solutions
-- **Gemini Match Score**: **91% ATS Match**
-- **ATS Template**: Classic Executive (Formal Serif)
-- **Highlighted Focus**: Algorithmic problem solving, C++ syntax, Python fundamentals, data structures, conditional logic, computational thinking.
-- **Primary Projects**: *Algorithmic Problem Solving (C++ & Python)*, *Interactive Scratch Game & Logic Simulator*.
-- **Generated Files**:
-  - `deliverables/Antara_Palwankar_Junior_Software_Engineer_Resume.pdf`
-  - `deliverables/Antara_Palwankar_Junior_Software_Engineer_Resume.docx`
+- 📖 [Comprehensive System Documentation](docs/SYSTEM_DOCUMENTATION.md)
+- 🔌 [REST API Reference Manual](docs/API_REFERENCE.md)
+- 📊 [Google Sheets & Apps Script Setup Guide](docs/GOOGLE_SHEETS_SETUP.md)
+- ⚖️ [Dual Resume Customization Comparison](deliverables/resume_customization_comparison.md)
 
 ---
 
-## 🛡️ Strict Anti-Hallucination Verification
-
-The `verifyAntiHallucination` service cross-references 100% of the resume items against the candidate's active database:
-```json
-{
-  "verified": true,
-  "verificationScore": 100,
-  "passedCount": 34,
-  "flaggedCount": 0,
-  "flaggedItems": []
-}
-```
-If an unverified skill, unlisted employer, or unearned credential appears, the verification stamp turns amber, highlighting the discrepancy to protect academic and professional integrity.
-
----
-
-## 📸 Deliverables Summary
-
-| Deliverable | Location | Description |
-| :--- | :--- | :--- |
-| **Complete Source Code** | `backend/` and `frontend/` | React 19, Express, MongoDB Mongoose, Gemini API |
-| **Google Apps Script** | `apps-script/Code.gs` | Multi-tab sync script with auto-styling |
-| **Multi-Sheet Export** | `deliverables/Portfolio_Database_Antara_Palwankar.xlsx` | 8 relational tabs ready for Google Sheets |
-| **Resume 1 (Frontend)** | `deliverables/Antara_Palwankar_Frontend_Web_Dev_Intern_Resume.pdf` | ATS-compliant vector PDF |
-| **Resume 1 (DOCX)** | `deliverables/Antara_Palwankar_Frontend_Web_Dev_Intern_Resume.docx` | Editable Word document |
-| **Resume 2 (Software Eng)**| `deliverables/Antara_Palwankar_Junior_Software_Engineer_Resume.pdf` | Tailored C++/Python vector PDF |
-| **Resume 2 (DOCX)** | `deliverables/Antara_Palwankar_Junior_Software_Engineer_Resume.docx` | Editable Word document |
-| **Customization Report**| `deliverables/resume_customization_comparison.md` | Side-by-side comparison report |
-| **Screenshots** | `deliverables/screenshots/` | Full UI workflow across all modules |
-| **Demo Recording** | `deliverables/demonstration_walkthrough.webp` | Full end-to-end browser workflow demo |
-
----
-*Created for Antara Palwankar — B.Tech Computer Science and Engineering (ITM Skills University).*
+## 👥 Candidate & Academic Profile
+- **Candidate:** Antara Palwankar
+- **Academic Degree:** B.Tech in Computer Science and Engineering (2025–2029)
+- **Institution:** ITM Skills University
+- **Repository:** [https://github.com/Antaraaaa14/AI-portfolio-and-resume](https://github.com/Antaraaaa14/AI-portfolio-and-resume)
